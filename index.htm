@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網頁</title>
+    <style>
+        .dcc1j20{
+            display: none;
+        }
+        .dc{
+            text-align: center;
+        }
+        .head{
+            text-align: center;
+        }
+        .ddc{
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px;
+        }
+        .dcc1j{
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px;
+            display: none;
+        }
+        .dcc1j2{
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px;
+            display: none;
+        }
+        .dcc1j3{
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px;
+            display: none;
+        }
+        .question{
+            text-align: left;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px;
+            display: none;
+        }
+        .nextb{
+            text-decoration: none;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: white;
+        }
+        .nextb:hover{
+            background-color: aqua;
+        }
+        summary{
+            text-decoration: none;
+        }
+        summary:hover{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="common" id="common">
+    <div class="head">
+        <h1>這是一個極其簡單的網頁</h1>
+    </div>
+    <div class="dc">
+        <h2>網頁導覽</h2>
+        <details>
+            <summary>讓我了解！！</summary>
+            <div class="ddc">
+                <p>這是一個非常突然的計畫，究竟是怎麼做出一頁式網站的？</p>
+                <button class="nextb" onclick="od1()">答案！！</button>
+            </div>
+        </details>
+    </div>
+    </div>
+    <div class="dcc1j" id="d1">
+        <ol>
+            <li>首先，你要先創建一個名為「.htm」的檔案，而這個檔案將會是建構網站的基礎，就像你現在看到的這些，皆是透過html這個程式語言進行編寫的，而vs code則是編輯器！</li>
+        </ol>
+        <button class="nextb" onclick="od2()">next</button>
+    </div>
+    <div class="dcc1j2" id="d2">
+        <p>而想要擁有一個美觀的網站，你還需要css這個程式語言，而html、css這兩者之間的關係，就像方屋的鋼筋與裝潢。</p>
+        <p>若就你現在眼前的這個畫面，也有css。按下方的按鈕就能看到他的真面目！</p>
+        <button class="nextb" onclick="od20()">look</button>
+    </div>
+    <div class="dcc1j20" id="d20">
+        <p>而想要擁有一個美觀的網站，你還需要css這個程式語言，而html、css這兩者之間的關係，就像方屋的鋼筋與裝潢。</p>
+        <p>若就你現在眼前的這個畫面，也有css。按下方的按鈕就能看到他的真面目！</p>
+        <button onclick="od3()">look</button>
+    </div>
+    <div class="dcc1j3" id="d3">
+        <p>網站要和使用者能有所互動才有趣，所以還要有javascript。</p>
+        <p>就像下方的按鈕也要有javascript，不然就像磚塊一樣，沒有用。</p>
+        <button class="nextb" onclick="oques()">next</button>
+    </div>
+    <div class="question" id="ques">
+        <h1>問題</h1>
+        <p>我們一起來看看剛剛的學習成果吧！！</p>
+        <li>1.在剛剛的網頁中，你看到幾個程式語言？</li>
+        <input type="number" id="ques1">
+        <li>2.承上題，請回答三個程式語言的名稱。（請按照順序，中間請用空個間隔。）</li>
+        <input type="text" id="ques2">
+        <li>3.請問html和css的關係就像房子的什麼和什麼？（請按照順序，中間請用空個間隔。）</li>
+        <input type="text" id="ques3"><br><br>
+        <button class="nextb" onclick="ans()">提交</button>
+        <p id="out"></p>
+    </div>
+
+    <script>
+        function od1(){
+            document.getElementById('common').style.display='none';
+            document.getElementById('d1').style.display='block';
+        }
+        function od2(){
+            document.getElementById('d1').style.display='none';
+            document.getElementById('d2').style.display='block';
+        }
+        function od20(){
+            document.getElementById('d2').style.display='none';
+            document.getElementById('d20').style.display='block';
+        }
+        function od3(){
+            document.getElementById('d20').style.display='none';
+            document.getElementById('d3').style.display='block';
+        }
+        function oques(){
+            document.getElementById('d3').style.display='none';
+            document.getElementById('ques').style.display='block';
+        }
+        function ans(){
+            var q1=document.getElementById('ques1').value;
+            var q2=document.getElementById('ques2').value;
+            var q3=document.getElementById('ques3').value;
+            if(q1==='3'&&q2==='html css javascript'&&q3==='鋼筋 裝潢'){
+                document.getElementById('out').style.color='green';
+                document.getElementById('out').innerHTML='全對！！';
+            }
+            else{
+                document.getElementById('out').style.color='red';
+                document.getElementById('out').innerHTML='有答案錯誤。';
+            }
+        }
+    </script>
+</body>
+</html>
